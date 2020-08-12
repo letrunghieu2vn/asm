@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./css/mystyle.css" rel="stylesheet" />
+    <title>Admin control center</title>
+    <style>
+        <style>input[type=text],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        body {
+            background-image: url("/images/background.png");
+            background-repeat: repeat;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <h1 align="center"> ADMIN CONTROL CENTER</h1>
+    <h2 align="center">All products</h2> <br>
+    <button><a href="/product/insert">Add product</a></button>
+    <td><button><a href="/">Home Page</a></button></td>
+
+    <div class="container">
+
+        <div class="left"></div>
+        <div style="width: 100%;">
+
+            <table style="margin-left: 50px; margin-top: 50px;">
+
+                <tr>
+                    <td>Product ID</td>
+                    <td>Product Name</td>
+                    <td>Image</td>
+                    <td>Product Price</td>
+                    <td>Product Description</td>
+
+                    <td>Sale</td>
+                    <td>Not Sale</td>
+                    <td>Delete</td>
+                </tr>
+                {{#each product}}
+                <tr>
+                    <td><input type="text" name="pid" value="{{ProductId}}"></td>
+                    <td><input type="text" name="pname" value="{{ProductName}}"></td>
+                    <td><input type="text" name="pimg" value="{{Image}}"></td>
+                    <td><input type="text" name="price" value="{{Price}}">VND</td>
+                    <td><textarea name="pnote" placeholder="{{Note}}" style="height:300px"></textarea> </td>
+                    {{!-- <td><input type="text" name="price" value="{{Price}}">VND</td> --}}
+                    {{!-- <td><input type="text" name="addnew" value="{{Addnew}}" </td> --}}
+                    <td><input type="text" name="onSale" value="{{onSale}}"></td>
+                    <td><input type="text" name="notSale" value="{{notSale}}"></td>
+                    <td><button><a href="/product/delete?id={{_id}}">Delete</a></button></Td>
+                </tr>
+                {{/each}}
+            </table>
+
+        </div>
+    </div>
+</body>
+
+</html>
