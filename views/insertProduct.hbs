@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/mystyle.css" rel="stylesheet" />
+    <title>Add Product</title>
+
+    <style>
+        input[type=text],
+        textarea {
+            width: 300%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        body {
+            background-image: url("/images/background.png");
+            background-repeat: no-repeat;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 align="center">ADD PRODUCT</h1>
+        <table style="margin-left: 180px; margin-top: 150px;">
+            <form action="doInsert" method="POST">
+                <tr>
+                    <td colspan="2" align="center"></td>
+                </tr>
+                <tr>
+                    <td>Product ID</td>
+                    <td><input type="text" name="id" required></td>
+                </tr>
+                <tr>
+                    <td>Product Name</td>
+                    <td><input type="text" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>Product Image</td>
+                    <td><input type="text" name="img"></td>
+                </tr>
+                <tr>
+                    <td>Product Price (VND) </td>
+                    <td><input type="text" name="price"></td>
+                </tr>
+
+
+                <tr>
+                    <td>Product Description</td>
+                    <td><textarea name="note" placeholder="Write something.." style="height:200px"></textarea> </td>
+                </tr>
+                <tr>
+                    <td>On SALE</td>
+                    <td>
+                        <label class="container">On
+                            <input type="checkbox" checked="checked" name="onSale">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Not
+                             <input type="checkbox" checked="checked" name="notSale">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+
+
+                </tr>
+
+                {{!-- <tr>
+                    <td>Addnew (max 10 ky tu) </td>
+                    <td><input type="text" name="addnew" maxlength="10"></td>
+                </tr> --}}
+
+                <tr>
+                    <br>
+                    <td align="center"><input type="submit" value="Add Product"></td>
+                </tr>
+            </form>
+        </table>
+    </div>
+
+</body>
+
+</html>
